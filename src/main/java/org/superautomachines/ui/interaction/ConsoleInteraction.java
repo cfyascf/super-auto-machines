@@ -1,4 +1,4 @@
-package org.superautomachines.ui;
+package org.superautomachines.ui.interaction;
 
 import org.superautomachines.commands.*;
 import org.superautomachines.commands.Args.BuyTeamPlayerArgs;
@@ -8,11 +8,13 @@ import org.superautomachines.commands.Args.FightCommandResponse;
 import org.superautomachines.game.Market;
 import org.superautomachines.game.Match;
 import org.superautomachines.game.Round;
+import org.superautomachines.ui.Panels;
+import org.superautomachines.ui.Util;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class Interaction {
+public class ConsoleInteraction implements IInteraction {
     private final Pattern regex = Pattern.compile("\\D");
     private ICommand command;
     private final Scanner scanner = new Scanner(System.in);

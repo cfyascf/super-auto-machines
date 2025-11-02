@@ -2,6 +2,7 @@ package org.superautomachines.game;
 
 import java.util.*;
 
+import org.superautomachines.generators.RandomTeamGenerator;
 import org.superautomachines.generators.TeamGenerator;
 import org.superautomachines.machines.Machine;
 
@@ -24,7 +25,8 @@ public class Market {
     }
 
     public void setMachines() {
-        machines = TeamGenerator.generate(3);
+        TeamGenerator myGenerator = new RandomTeamGenerator();
+        machines = myGenerator.generate(3);
     }
 
     public boolean buyMachine(Machine m) {

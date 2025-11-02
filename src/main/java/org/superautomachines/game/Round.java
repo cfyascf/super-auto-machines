@@ -2,6 +2,7 @@ package org.superautomachines.game;
 
 import org.superautomachines.data.RoundResult;
 import org.superautomachines.data.SingleFightResult;
+import org.superautomachines.generators.RandomTeamGenerator;
 import org.superautomachines.generators.TeamGenerator;
 import org.superautomachines.machines.Machine;
 import java.util.*;
@@ -28,8 +29,10 @@ public class Round {
     public void buildOpponentsComp() {
         Market.newMarket();
         Random random = new Random();
-        int teamSize = 3 + random.nextInt(3); // gera 3 a 5 (equivalente a Next(3,6))
-        opponents = TeamGenerator.generate(teamSize);
+        int teamSize = 3 + random.nextInt(3);
+
+        TeamGenerator myGenerator = new RandomTeamGenerator();
+        opponents = myGenerator.generate(teamSize);
     }
 
     public SingleFightResult playFight() {

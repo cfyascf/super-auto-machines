@@ -1,17 +1,15 @@
 package org.superautomachines.ui;
 
+import org.superautomachines.ui.interaction.IInteraction;
+
 public class Game {
-    private static Interaction i = new Interaction();
+    private final IInteraction i;
 
-    public static Interaction getInteraction() {
-        return i;
+    public Game(IInteraction consoleInteraction) {
+        this.i = consoleInteraction;
     }
 
-    public static void setInteraction(Interaction interaction) {
-        i = interaction;
-    }
-
-    public static void init() {
+    public void init() {
         Panels.pTitle();
         Util.wait(1.2);
 
