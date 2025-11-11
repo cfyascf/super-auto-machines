@@ -6,8 +6,8 @@ import org.superautomachines.ui.interaction.IInteraction;
 
 public class Main {
     public static void main(String[] args) {
-        IInteraction myInteraction = new ConsoleInteraction();
-        Game game = new Game(myInteraction);
+        IInteraction interaction = new ConsoleInteraction();
+        Game game = new Game(interaction);
 
         game.init();
     }

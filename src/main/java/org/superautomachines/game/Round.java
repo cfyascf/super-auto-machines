@@ -2,8 +2,8 @@ package org.superautomachines.game;
 
 import org.superautomachines.data.RoundResult;
 import org.superautomachines.data.SingleFightResult;
-import org.superautomachines.generators.RandomTeamGenerator;
 import org.superautomachines.generators.TeamGenerator;
+import org.superautomachines.generators.Tier1TeamGenerator;
 import org.superautomachines.machines.Machine;
 import java.util.*;
 
@@ -31,7 +31,7 @@ public class Round {
         Random random = new Random();
         int teamSize = 3 + random.nextInt(3);
 
-        TeamGenerator myGenerator = new RandomTeamGenerator();
+        TeamGenerator myGenerator = new Tier1TeamGenerator();
         opponents = myGenerator.generate(teamSize);
     }
 

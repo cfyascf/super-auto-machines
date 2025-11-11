@@ -2,8 +2,8 @@ package org.superautomachines.game;
 
 import java.util.*;
 
-import org.superautomachines.generators.RandomTeamGenerator;
 import org.superautomachines.generators.TeamGenerator;
+import org.superautomachines.generators.Tier1TeamGenerator;
 import org.superautomachines.machines.Machine;
 
 public class Market {
@@ -25,7 +25,10 @@ public class Market {
     }
 
     public void setMachines() {
-        TeamGenerator myGenerator = new RandomTeamGenerator();
+        Random random = new Random();
+        int teamSize = 3 + random.nextInt(3);
+
+        TeamGenerator myGenerator = new Tier1TeamGenerator();
         machines = myGenerator.generate(3);
     }
 
